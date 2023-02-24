@@ -1,0 +1,15 @@
+.container {
+  border: 1px solid red;
+  max-width: 600px;
+  margin: auto;
+  padding: 0 30px 30px;
+
+  &__user {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid blue;
+    cursor: pointer;
+  }
+}
