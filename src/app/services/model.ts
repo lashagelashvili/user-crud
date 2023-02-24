@@ -26,7 +26,7 @@ interface Company {
   name: string;
 }
 
-export interface UserPosts {
+export interface UserPost {
   body: string;
   id: number;
   title: string;
