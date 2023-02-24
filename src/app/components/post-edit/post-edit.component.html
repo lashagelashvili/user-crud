@@ -1,0 +1,39 @@
+<form class="form" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <h2>Edit</h2>
+
+  <label for="title">Title:</label>
+  <textarea
+    rows="2"
+    id="title"
+    name="title"
+    placeholder="Title..."
+    formControlName="title"
+  ></textarea>
+  <div
+    *ngIf="postForm.get('title')?.errors && postForm.get('title')?.touched"
+    class="form-error"
+  >
+    Title length must be at least 10 characters.
+  </div>
+
+  <label for="body">Body:</label>
+  <textarea
+    rows="7"
+    id="body"
+    name="body"
+    placeholder="Body..."
+    formControlName="body"
+  ></textarea>
+  <div
+    *ngIf="postForm.get('body')?.errors && postForm.get('body')?.touched"
+    class="form-error"
+  >
+    Body length must be at least 10 characters.
+  </div>
+
+  <button type="submit" class="form-submit" [disabled]="!postForm.valid">
+    Submit
+  </button>
+</form>
+
+<!--  -->
