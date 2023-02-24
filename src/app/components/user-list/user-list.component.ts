@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-list.component.scss'],
 })
 export class UserListComponent {
-  users$ = this.userService.getUsers();
+  public users$ = this.userService.getUsers();
 
   constructor(
     private readonly userService: UserService,

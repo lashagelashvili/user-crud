@@ -1,8 +1,8 @@
 <div class="container" *ngIf="userPosts$ | async as userPosts">
   <div class="container__posts" *ngFor="let post of userPosts">
     <div>
-      <div>{{ post.title }}</div>
-      <div>{{ post.body }}</div>
+      <div class="container__posts-title">{{ post.title }}</div>
+      <div class="container__posts-body">{{ post.body }}</div>
     </div>
 
     <div class="container__buttons">

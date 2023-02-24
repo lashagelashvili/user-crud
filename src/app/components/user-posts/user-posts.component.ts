@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, Observable, tap } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { UserPost } from 'src/app/services/model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,8 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserPostsComponent implements OnInit {
   private userId: number;
-
-  userPosts$: Observable<UserPost[]>;
+  public userPosts$: Observable<UserPost[]>;
 
   constructor(
     private readonly userService: UserService,
@@ -22,10 +21,7 @@ export class UserPostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.params['id'];
-
-    this.userPosts$ = this.userService
-      .getUserPosts(this.userId)
-      .pipe(tap(console.log));
+    this.userPosts$ = this.userService.getUserPosts(this.userId);
   }
 
   onEdit(postId: number) {
