@@ -1,2 +1,10 @@
 <h1 class="success">{{ successMessage }}</h1>
+
+<ng-container *ngIf="userPost">
+  <div class="userPost">
+    <h2>{{ userPost.title }}</h2>
+    <h3>{{ userPost.body }}</h3>
+  </div>
+</ng-container>
+
 <app-return-home></app-return-home>

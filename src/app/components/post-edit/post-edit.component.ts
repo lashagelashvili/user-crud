@@ -46,9 +46,9 @@ export class PostEditComponent implements OnInit {
           throw err;
         })
       )
-      .subscribe((_) => {
+      .subscribe((post: UserPost) => {
         this.router.navigate(['success'], {
-          state: { successMessage: 'Post has been edited successfully' },
+          state: { successMessage: 'Post has been edited successfully', post },
         });
       });
   }
