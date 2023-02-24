@@ -1,15 +1,18 @@
 .container {
-  border: 1px solid red;
   max-width: 600px;
-  margin: auto;
-  padding: 0 30px 30px;
+  margin-inline: auto;
 
   &__user {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    padding: 30px;
-    border: 1px solid blue;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #0013ff;
+    color: #fff;
     cursor: pointer;
+
+    &:hover {
+      background-color: #434ee7;
+    }
   }
 }
