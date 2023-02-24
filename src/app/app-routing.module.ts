@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'user/:id/:post/edit', component: PostEditComponent },
   { path: 'success', component: SuccessComponent },
   { path: 'error', component: ErrorComponent },
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
+  { path: '**', redirectTo: 'users', pathMatch: 'full' },
 ];
 
 @NgModule({
