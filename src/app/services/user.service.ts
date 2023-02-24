@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User, UserPosts } from './model';
+import { User, UserPost } from './model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,15 +13,28 @@ export class UserService {
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 
-  getUserPosts(id: number): Observable<UserPosts[]> {
-    return this.http.get<UserPosts[]>(
+  getUserPosts(id: number): Observable<UserPost[]> {
+    return this.http.get<UserPost[]>(
       `https://jsonplaceholder.typicode.com/user/${id}/posts`
     );
   }
 
-  deletePost(userId: number, postId: number) {
-    return this.http.delete(
-      `https://jsonplaceholder.typicode.com/posts/${postId}`
+  getPost(id: number): Observable<UserPost> {
+    return this.http.get<UserPost>(
+      `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+  }
+
+  updatePost(postId: number, post: UserPost): Observable<UserPost> {
+    return this.http.patch<UserPost>(
+      `https://jsonplaceholder.typicode.com/posts/${postId}`,
+      post
+    );
+  }
+
+  deletePost(postId: number): Observable<void> {
+    return this.http.delete<void>(
+      `https://jsonplaceholder.typicode.com/postss/${postId}`
     );
   }
 }
