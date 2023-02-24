@@ -34,7 +34,7 @@ export class UserService {
 
   deletePost(postId: number): Observable<void> {
     return this.http.delete<void>(
-      `https://jsonplaceholder.typicode.com/postss/${postId}`
+      `https://jsonplaceholder.typicode.com/posts/${postId}`
     );
   }
 }
