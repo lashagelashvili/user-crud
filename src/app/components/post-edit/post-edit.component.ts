@@ -13,7 +13,7 @@ import { UserPost } from '../../services/model';
 export class PostEditComponent implements OnInit {
   private postId: number;
 
-  postForm = new FormGroup({
+  public postForm = new FormGroup({
     id: new FormControl(),
     userId: new FormControl(),
     title: new FormControl('', [Validators.required, Validators.minLength(10)]),
