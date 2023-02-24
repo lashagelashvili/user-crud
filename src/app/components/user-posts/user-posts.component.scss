@@ -1,0 +1,25 @@
+.container {
+  border: 1px solid red;
+  margin: 20px;
+
+  &__posts {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 15px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    button {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      background-color: aquamarine;
+      cursor: pointer;
+    }
+  }
+}

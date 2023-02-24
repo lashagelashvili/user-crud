@@ -1,0 +1,13 @@
+<div class="container" *ngIf="userPosts$ | async as userPosts">
+  <div class="container__posts" *ngFor="let post of userPosts">
+    <div>
+      <div>{{ post.title }}</div>
+      <div>{{ post.body }}</div>
+    </div>
+
+    <div class="container__buttons">
+      <button (click)="onEdit(post.id)">Edit</button>
+      <button (click)="onDelete(post.id)">Delete</button>
+    </div>
+  </div>
+</div>
