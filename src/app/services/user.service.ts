@@ -18,4 +18,10 @@ export class UserService {
       `https://jsonplaceholder.typicode.com/user/${id}/posts`
     );
   }
+
+  deletePost(userId: number, postId: number) {
+    return this.http.delete(
+      `https://jsonplaceholder.typicode.com/posts/${postId}`
+    );
+  }
 }
